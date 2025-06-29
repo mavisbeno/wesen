@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wesen - Soins Capillaires Afro Premium</title>
+    <meta name="description" content="Des soins capillaires premium pour révéler la beauté naturelle de vos cheveux afro. Huiles, masques, sérums et produits de coiffage.">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles personnalisés pour remplacer les fonctionnalités spécifiques de Tailwind */
+        body {
+            background: linear-gradient(to bottom right, #FFFBEB, white, #FDF2F8);
+            min-height: 100vh;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(to right, #D97706, #DB2777);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(to right, #139413, #086408);
+        }
+        
+        .gradient-bg-light {
+            background: linear-gradient(to right, #F59E0B, #EC4899);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-blur {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+            z-index: 1;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/images/hero-cover.jpeg');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cart-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .cart-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(to right, #F59E0B, #EC4899);
+            color: white;
+        }
+        
+        .faq-question {
+            transition: background-color 0.2s ease;
+        }
+        
+        .faq-answer {
+            display: none;
+        }
+        
+        .faq-icon {
+            transition: transform 0.2s ease;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+     <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="assets/logo/logo-wesen.svg" alt="Logo wesen">
+                            </a>
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="#home" class="page-scroll active"
+                                            aria-label="Toggle navigation">Accueil</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#features" class="page-scroll"
+                                            aria-label="Toggle navigation">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#pricing" class="page-scroll"
+                                            aria-label="Toggle navigation">Galerie</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#apropos" aria-label="Toggle navigation">à propos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#contacts" aria-label="Toggle navigation">Contact</a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="button add-list-button">
+                                <a href="#contacts" class="btn">Nos produits</a>
+                            </div>
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content text-center px-4 mx-auto" style="max-width: 800px;">
+            <h1 class="display-3 fw-bold text-white mb-4 animate-fadeInUp">
+                Révélez la <span class="gradient-text">Beauté</span> de vos Cheveux Afro
+            </h1>
+            <p class="fs-4 text-white mb-5 mx-auto animate-fadeInUp" style="animation-delay: 0.2s; max-width: 600px;">
+                Des soins capillaires premium, formulés spécialement pour sublimer la beauté naturelle de vos cheveux afro
+            </p>
+            <button id="hero-cta" class="gradient-bg text-white fs-5 fw-semibold rounded-pill px-5 py-3 border-0 animate-fadeInUp" style="animation-delay: 0.4s;">
+                Découvrir nos Produits
+            </button>
+        </div>
+    </section>
+
+    <!-- À Propos -->
+    <section class="section py-5">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6">
+                    <h2 class="display-5 fw-bold mb-4 gradient-text">
+                        Notre Mission
+                    </h2>
+                    <p class="fs-5 text-muted mb-4">
+                        Chez wesen, nous croyons que chaque femme mérite des produits qui célèbrent et subliment sa beauté naturelle. 
+                        Nos formules sont développées avec amour, en utilisant les meilleurs ingrédients naturels pour nourrir, 
+                        protéger et embellir vos cheveux afro.
+                    </p>
+                    <p class="fs-5 text-muted">
+                        Nous comprenons les défis uniques des cheveux afro et créons des solutions innovantes qui respectent 
+                        leur structure naturelle tout en apportant l'hydratation et la nutrition dont ils ont besoin.
+                    </p>
+                </div>
+                <div class="col-md-6 position-relative">
+                    <img src="https://images.pexels.com/photos/7879510/pexels-photo-7879510.jpeg" alt="Famille avec cheveux naturels" class="rounded-4 shadow-lg w-100" style="height: 400px; object-fit: cover;">
+                    <div class="position-absolute inset-0 bg-gradient-to-top from-black/20 to-transparent rounded-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produits -->
+    <section id="products" class="section py-5 bg-white">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-4 gradient-text">
+                    Nos Produits Premium
+                </h2>
+                <p class="fs-4 text-muted mx-auto" style="max-width: 700px;">
+                    Une gamme complète de soins capillaires pour révéler toute la beauté de vos cheveux afro
+                </p>
+            </div>
+
+            <!-- Filtres -->
+            <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+                <button class="filter-btn active btn btn-outline-secondary rounded-pill px-4" data-category="all">Tous les Produits</button>
+                <button class="filter-btn btn btn-outline-secondary rounded-pill px-4" data-category="huiles">Huiles</button>
+                <button class="filter-btn btn btn-outline-secondary rounded-pill px-4" data-category="masques">Masques</button>
+                <button class="filter-btn btn btn-outline-secondary rounded-pill px-4" data-category="serums">Sérums</button>
+                <button class="filter-btn btn btn-outline-secondary rounded-pill px-4" data-category="styling">Coiffage</button>
+            </div>
+
+            <!-- Grille des produits - Modification ici -->
+            <div id="products-grid" class="row g-4">
+                <!-- 1 colonne sur mobile (col-12), 2 colonnes à partir de md (col-md-6) -->
+                <!-- Les produits seront ajoutés dynamiquement par JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="section py-5" style="background: linear-gradient(to bottom right, #FFFBEB, #FDF2F8);">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-4 gradient-text">
+                    Nos Clientes Témoignent
+                </h2>
+                <p class="fs-4 text-muted">
+                    Des milliers de femmes ont déjà transformé leur routine capillaire avec wesen
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card bg-white bg-opacity-80 rounded-3 p-4 shadow-sm h-100">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1634155322814-907072ac721f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxhZnJvJTIwaGFpciUyMGNhcmV8ZW58MHx8fHwxNzUwNTIwNDMwfDA&ixlib=rb-4.1.0&q=85" alt="Sarah M." class="rounded-circle me-3" style="width: 64px; height: 64px; object-fit: cover;">
+                            <div>
+                                <h4 class="fw-bold text-dark mb-0">Sarah M.</h4>
+                                <div class="d-flex gap-1">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted fst-italic">"Mes cheveux n'ont jamais été aussi brillants ! L'huile nutritive a transformé ma routine capillaire."</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="testimonial-card bg-white bg-opacity-80 rounded-3 p-4 shadow-sm h-100">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1646457417024-1351e2103aa4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxuYXR1cmFsJTIwaGFpciUyMHByb2R1Y3RzfGVufDB8fHx8MTc1MDUyMDQ0MHww&ixlib=rb-4.1.0&q=85" alt="Aminata K." class="rounded-circle me-3" style="width: 64px; height: 64px; object-fit: cover;">
+                            <div>
+                                <h4 class="fw-bold text-dark mb-0">Aminata K.</h4>
+                                <div class="d-flex gap-1">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted fst-italic">"Enfin des produits qui comprennent vraiment mes cheveux afro. Je recommande à toutes mes sœurs !"</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="testimonial-card bg-white bg-opacity-80 rounded-3 p-4 shadow-sm h-100">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1713180758513-151b3d3bb4d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxjdXJseSUyMGhhaXIlMjBwcm9kdWN0c3xlbnwwfHx8fDE3NTA1MjA0NjB8MA&ixlib=rb-4.1.0&q=85" alt="Fatou D." class="rounded-circle me-3" style="width: 64px; height: 64px; object-fit: cover;">
+                            <div>
+                                <h4 class="fw-bold text-dark mb-0">Fatou D.</h4>
+                                <div class="d-flex gap-1">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted fst-italic">"Le masque hydratant est magique ! Mes cheveux sont plus faciles à coiffer et super doux."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section py-5 bg-white">
+        <div class="container py-5" style="max-width: 900px;">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-4 gradient-text">
+                    Questions Fréquentes
+                </h2>
+                <p class="fs-4 text-muted">
+                    Tout ce que vous devez savoir sur nos produits et services
+                </p>
+            </div>
+
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item border rounded-3 mb-3 overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fs-5 fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Vos produits conviennent-ils à tous types de cheveux afro ?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body bg-light">
+                            <p class="text-muted">Oui ! Nos produits sont spécialement formulés pour tous les types de cheveux afro, des plus fins aux plus épais, des cheveux naturels aux cheveux traités.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border rounded-3 mb-3 overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fs-5 fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            À quelle fréquence utiliser l'huile nutritive ?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body bg-light">
+                            <p class="text-muted">Nous recommandons d'utiliser l'huile nutritive 2-3 fois par semaine, en petite quantité sur cheveux humides ou secs selon vos besoins.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border rounded-3 mb-3 overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fs-5 fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Vos produits sont-ils naturels ?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body bg-light">
+                            <p class="text-muted">Nos produits contiennent au minimum 95% d'ingrédients naturels, sans sulfates, sans parabènes et sans silicones nocifs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border rounded-3 mb-3 overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fs-5 fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Livraison et retours ?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body bg-light">
+                            <p class="text-muted">Livraison gratuite dès 50€ d'achat. Retours acceptés sous 30 jours si vous n'êtes pas satisfaite.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section bg-dark text-white py-5">
+        <div class="container py-4">
+            <div class="row g-5 mb-4">
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center gap-2 mb-4">
+                        <div class="gradient-bg rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <span class="text-white fw-bold fs-5">A</span>
+                        </div>
+                        <h3 class="fs-4 fw-bold m-0">wesen</h3>
+                    </div>
+                    <p class="text-muted">
+                        Des soins capillaires premium pour révéler la beauté naturelle de vos cheveux afro.
+                    </p>
+                </div>
+                
+                <div class="col-md-3">
+                    <h4 class="fs-5 fw-semibold mb-3">Produits</h4>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-white">Huiles</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-white">Masques</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-white">Sérums</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted hover-white">Coiffage</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3">
+                    <h4 class="fs-5 fw-semibold mb-3">Support</h4>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-white">Contact</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-white">Livraison</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-white">Retours</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted hover-white">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3">
+                    <h4 class="fs-5 fw-semibold mb-3">Suivez-nous</h4>
+                    <div class="d-flex gap-3 mb-4">
+                        <a href="#" class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="text-muted small mb-2">Newsletter</p>
+                        <div class="input-group">
+                            <input type="email" placeholder="Votre email" class="form-control bg-gray-800 border-secondary text-white">
+                            <button class="gradient-bg text-white border-0 px-3">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-top border-secondary pt-4 text-center">
+                <p class="text-muted small">&copy; 2024 wesen. Tous droits réservés. Fait avec ❤️ pour la beauté afro.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sidebar Panier -->
+    <div id="cart-sidebar" class="position-fixed top-0 end-0 vh-100 vw-100" style="z-index: 1050; display: none;">
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50" id="cart-overlay"></div>
+        <div class="position-absolute top-0 end-0 h-100 bg-white shadow-lg" style="width: 100%; max-width: 420px;">
+            <div class="d-flex flex-column h-100">
+                <div class="d-flex align-items-center justify-content-between p-4 border-bottom">
+                    <h2 class="fs-3 fw-bold m-0">Votre Panier</h2>
+                    <button id="close-cart" class="btn p-2">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="flex-grow-1 overflow-auto p-4">
+                    <div id="cart-items" class="d-grid gap-3">
+                        <!-- Les articles du panier seront ajoutés dynamiquement -->
+                    </div>
+                    <div id="cart-empty" class="text-center py-5">
+                        <i class="fas fa-shopping-cart fs-1 text-muted mb-3"></i>
+                        <p class="text-muted">Votre panier est vide</p>
+                    </div>
+                </div>
+                
+                <div id="cart-footer" class="border-top p-4 d-none">
+                    <div class="d-flex justify-content-between align-items-center fs-4 fw-bold mb-4">
+                        <span>Total:</span>
+                        <span id="cart-total" class="text-warning">0.00€</span>
+                    </div>
+                    <button class="gradient-bg text-white fw-semibold w-100 py-3 border-0 rounded">
+                        Procéder au Paiement
+                    </button>
+                    <p class="text-muted small text-center mt-3">
+                        Livraison gratuite dès 50€ d'achat
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
