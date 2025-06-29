@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function initializeApp() {
     renderProducts();
-    updateCartUI();
     setupEventListeners();
     setupFAQ();
     setupScrollAnimations();
@@ -85,7 +84,6 @@ function initializeApp() {
 // Configuration des événements
 function setupEventListeners() {
     // Boutons du panier
-    cartBtn.addEventListener('click', openCart);
     cartOverlay.addEventListener('click', closeCart);
     closeCartBtn.addEventListener('click', closeCart);
     
@@ -154,7 +152,7 @@ function createProductCard(product) {
                     class="add-to-cart-btn btn gradient-bg text-white rounded-pill px-4"
                     data-product-id="${product.id}"
                 >
-                    Ajouter
+                    Commander
                 </button>
             </div>
         </div>
@@ -212,30 +210,6 @@ function updateQuantity(productId, newQuantity) {
     }
 }
 
-function updateCartUI() {
-    const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
-    const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-    
-    // Mettre à jour le compteur du panier
-    if (itemCount > 0) {
-        cartCount.textContent = itemCount;
-        cartCount.classList.remove('hidden');
-    } else {
-        cartCount.classList.add('hidden');
-    }
-    
-    // Mettre à jour le contenu du panier
-    if (cart.length === 0) {
-        cartEmpty.classList.remove('hidden');
-        cartFooter.classList.add('hidden');
-        cartItems.innerHTML = '';
-    } else {
-        cartEmpty.classList.add('hidden');
-        cartFooter.classList.remove('hidden');
-        renderCartItems();
-        cartTotal.textContent = `${totalPrice.toFixed(2)}€`;
-    }
-}
 
 function renderCartItems() {
     cartItems.innerHTML = '';

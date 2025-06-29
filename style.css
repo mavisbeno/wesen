@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+}
 
 
 /* Animations personnalisées */
@@ -311,17 +315,21 @@
 /* Responsive design amélioré */
 @media (max-width: 768px) {
   .glass, .glass-dark {
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
   }
   
   .product-card {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
+
   
   .filter-btn {
     font-size: 0.875rem;
     padding: 0.5rem 1rem;
+  }
+  .text-mission{
+    padding: 1rem;
   }
 }
 
@@ -332,10 +340,10 @@
 ========================================*/
 .header {
   width: 100%;
-  background-color: #f0eeec;
+  background-color: #f0f5f0;
   position: absolute;
-  -webkit-box-shadow: 0px 10px 20px 1px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 10px 20px 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
   left: 0;
   top: 0;
 }
@@ -345,7 +353,8 @@
     padding: 10px 0 !important;
   }
   .header .mobile-menu-btn .toggler-icon {
-    background-color: #1c7919;
+    background-color: #0b3809;
+    border-color: #0b3809;
   }
   .header .button {
     margin: 0 !important;
@@ -417,7 +426,7 @@
   }
   .header .navbar-nav .nav-item .sub-menu li.active {
     background: #fff !important;
-    color: #0d5e1e !important;
+    color: #0b3809 !important;
   }
   .header .navbar-nav .nav-item .sub-menu .nav-item {
     margin: 0 !important;
@@ -1062,7 +1071,8 @@ html {
 /* Marge entre les cartes sur mobile */
 @media (max-width: 767.98px) {
     #products-grid .col-12:not(:last-child) {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
+        padding: 0 1rem;
     }
 }
 
