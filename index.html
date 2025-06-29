@@ -157,7 +157,7 @@
                                         <a href="#home" class="page-scroll active"
                                             aria-label="Toggle navigation">Accueil</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item" class="page-scroll">
                                         <a href="#apropos" aria-label="Toggle navigation">à propos</a>
                                     </li>
                                     <li class="nav-item">
@@ -201,8 +201,8 @@
     </section>
 
     <!-- À Propos -->
-    <section id="apropos" class="section py-5">
-        <div class="container py-5">
+    <section id="apropos" class="section py-2">
+        <div class="container py-4">
             <div class="row align-items-center g-5">
                 <div class="col-md-6">
                     <h2 class="text-center display-5 fw-bold mb-4 gradient-text">
@@ -227,8 +227,8 @@
     </section>
 
     <!-- Produits -->
-    <section id="products" class="section py-5 bg-white">
-        <div class="container py-5">
+    <section id="products" class="section py-4 bg-white">
+        <div class="container py-2">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold mb-4 gradient-text">
                     Nos Produits Capillaires
@@ -256,13 +256,13 @@
     </section>
 
     <!-- Témoignages -->
-    <section id="testimonial" class="section py-5" style="background: linear-gradient(to bottom right, #FFFBEB, #FDF2F8);">
-        <div class="container py-5">
+    <section id="testimonial" class="section testimonial-section py-4">
+        <div class="container py-4">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold mb-4 gradient-text">
                     Nos Clientes Témoignent
                 </h2>
-                <p class="fs-4 text-muted">
+                <p class="fs-4 description">
                     Des milliers de femmes ont déjà transformé leur routine capillaire avec wesen
                 </p>
             </div>
@@ -328,9 +328,69 @@
         </div>
     </section>
 
+
+    <section id="contacts" class="section call-action py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="cta-content">
+
+                        <div class="text-center mb-5">
+                            <h2 class="display-5 fw-bold mb-4 gradient-text">
+                               Contactez-Nous
+                            </h2>
+                            <p class="fs-4 description">
+                                Pour Commander ! Une question sur nos produits ? Besoin de conseils 
+                                personnalisés ? Notre équipe est là pour vous aider !
+                            </p>
+                        </div>
+
+                        <div class="mt-3 mb-3 text-muted d-flex align-items-center justify-content-center gap-2">
+                                <i class="bi bi-geo-alt-fill fs-5 text-white"></i>
+                                <span class="text-muted">Yaoundé et Livraison partout</span>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-center gap-2 contact-buttons">
+                            <button onclick="contactWhatsApp()" class="btn btn-success d-flex align-items-center gap-2 px-4 py-2">
+                                <i class="bi bi-whatsapp fs-5"></i> WhatsApp<br>+1 438-227-6478
+                            </button>
+
+                            <!-- Groupe Appels (wrap mobile) -->
+                            <div class="d-flex flex-wrap flex-sm-nowrap flex-column flex-sm-row gap-2 w-100 justify-content-center call-buttons">
+                                <button onclick="contactCall()" class="btn btn-dark flex-fill py-2">
+                                <i class="bi bi-telephone fs-5"></i> Appel<br>+1 438-227-6478
+                                </button>
+                                <button onclick="contactCall2()" class="btn btn-dark flex-fill py-2">
+                                <i class="bi bi-telephone fs-5"></i> Appel-2<br>+1 438-368-1752
+                                </button>
+                            </div>
+
+                            <button onclick="contactSMS()" class="btn btn-primary d-flex align-items-center gap-2 px-4 py-2">
+                                <i class="bi bi-chat-text fs-5"></i> SMS
+                            </button>
+
+                            <button onclick="contactEmail()" class="btn btn-danger d-flex align-items-center gap-2 px-4 py-2">
+                                <i class="bi bi-envelope fs-5"></i> Email
+                            </button>
+                            
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-center fs-5 gap-4 mt-4">
+                        
+                            <a href="https://www.tiktok.com/@blackang05" target="_blank" class="socialm"><i class="fab fa-tiktok"></i> TikTok</a>
+                            <a href="https://www.snapchat.com/add/anny_fobasso"target="_blank" class="socialm"><i class="fab fa-snapchat"></i> Snapchat</a>
+                            <a href="https://www.instagram.com/annyniaemelie" target="_blank" class="socialm"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="https://www.facebook.com/emelie.fobasso" target="_blank" class="socialm"><i class="lni lni-facebook-filled"></i>Facebook</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Call To Action Area -->
+
     <!-- FAQ -->
-    <section id="faq" class="section py-5 bg-white">
-        <div class="container py-5" style="max-width: 900px;">
+    <section id="faq" class="section py-2 bg-white">
+        <div class="container py-4" style="max-width: 900px;">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold mb-4 gradient-text">
                     Questions Fréquentes
@@ -397,8 +457,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="section bg-dark text-white py-5">
-        <div class="container py-4">
+    <footer class="section bg-dark text-white py-2">
+        <div class="container py-3">
             <div class="row g-5 mb-4">
                 <div class="col-md-3">
                     
