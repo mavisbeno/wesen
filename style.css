@@ -247,100 +247,68 @@ html, body {
 /*======================================
     Call To Action CSS
 ========================================*/
-.call-action {
-  background-color: #cfcecd;
-}
-
-.call-action .cta-content {
-  text-align: center;
-  padding: 0px 50px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .call-action .cta-content {
-    padding: 0;
-  }
-}
-
-@media (max-width: 767px) {
-  .call-action .cta-content {
-    padding: 0;
-  }
-}
-
-.call-action .cta-content h2 {
-  line-height: 50px;
-  font-size: 38px;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .call-action .cta-content h2 {
-    font-size: 32px;
-    line-height: 45px;
-  }
-}
-
-@media (max-width: 767px) {
-  .call-action .cta-content h2 {
-    font-size: 25px;
-    line-height: 35px;
-  }
-}
-
-.call-action .cta-content p {
-  padding: 0px 50px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .call-action .cta-content p {
-    padding: 0;
-  }
-}
-
-@media (max-width: 767px) {
-  .call-action .cta-content p {
-    padding: 0;
-  }
-}
-
-.call-action .cta-content .button {
-  margin-top: 40px;
-}
-
-.call-action .cta-content .button .btn {
-  background-color: #fff;
-  color: #ed7100;
-}
-
-.call-action .cta-content .button .btn:hover {
-  color: #fff;
-  background-color: #081828;
-}
-
-
-@media (max-width: 767px) {
-  .contact-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .contact-buttons button {
-    width: 100%;
+/* ====== Nouveau style pour les boutons de contact ====== */
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 20px; /* Espace entre les boutons */
+    margin-top: 40px;
+}
+
+.contact-buttons .btn {
+    background-color: #011f06;
+    background: linear-gradient(to top right, #01330a, #086408);
+    color: #fff;
+    border-radius: 10px;
+    border: 0;
+    padding: 10px;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    transition: all 0.3s ease;
+}
+
+.contact-buttons .btn:hover {
+    color: #fff;
+    background-color: #081828;
+    transform: translateY(-5px);
+}
+
+.contact-info {
+    padding: 10px;
     text-align: center;
-    white-space: normal;
-  }
+}
 
-  .call-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
+.contact-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
 
-  .call-buttons button {
-    width: 100%;
-  }
+/* Responsive */
+@media (max-width: 767px) {
+    .contact-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .contact-buttons .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.socialm {
+  color: #043818;
+  font-size: medium;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.socialm:hover {
+  color: #081828;
+}
+
+a {
+ text-decoration:none;
 }
 
 /* ===================== end CTA =========================================== */
@@ -445,7 +413,6 @@ html, body {
     padding: 1rem;
   }
 }
-
 
 
 /*======================================
@@ -658,7 +625,6 @@ html, body {
 }
 
 .header .button .btn {
-  background-color: #033505;
   background: linear-gradient(to right, #139413, #086408);
   border: 2px solid #fff;
   color: #fff;
@@ -1025,10 +991,6 @@ html, body {
      End Header CSS
   ========================================*/
 
-
-
-
-
 /* Loader personnalisé */
 .custom-loader {
   width: 50px;
@@ -1147,8 +1109,6 @@ html {
 
 
 
-
-
 /*----------------- ajout -----------------------*/
 /* Styles spécifiques pour compléter Bootstrap */
 .gradient-bg {
@@ -1258,3 +1218,18 @@ html {
   background-color: #081828;
 }
 /*----------------------------------fin ajout----------------------------------*/
+
+/* ================================ Footer =================================== */
+.footer{
+  background: linear-gradient(to top right, #077407, #086408);
+}
+
+.footer .logo-footer{
+  color: #fff;
+}
+.logo-color {
+  filter: invert(3);
+  /* ou */
+  fill: rgb(255, 255, 255); 
+  color: #fff;
+}

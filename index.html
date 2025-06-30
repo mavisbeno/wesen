@@ -9,6 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="style.css">
     <style>
         /* Styles personnalisés pour remplacer les fonctionnalités spécifiques de Tailwind */
@@ -317,7 +320,7 @@
                                     <i class="fas fa-star text-warning"></i>
                                     <i class="fas fa-star text-warning"></i>
                                     <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -332,7 +335,7 @@
     <section id="contacts" class="section call-action py-4">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                
                     <div class="cta-content">
 
                         <div class="text-center mb-5">
@@ -349,40 +352,48 @@
                                 <i class="bi bi-geo-alt-fill fs-5 text-white"></i>
                                 <span class="text-muted">Yaoundé et Livraison partout</span>
                         </div>
-                        <div class="d-flex flex-wrap justify-content-center gap-2 contact-buttons">
-                            <button onclick="contactWhatsApp()" class="btn btn-success d-flex align-items-center gap-2 px-4 py-2">
-                                <i class="bi bi-whatsapp fs-5"></i> WhatsApp<br>+1 438-227-6478
-                            </button>
-
-                            <!-- Groupe Appels (wrap mobile) -->
-                            <div class="d-flex flex-wrap flex-sm-nowrap flex-column flex-sm-row gap-2 w-100 justify-content-center call-buttons">
-                                <button onclick="contactCall()" class="btn btn-dark flex-fill py-2">
-                                <i class="bi bi-telephone fs-5"></i> Appel<br>+1 438-227-6478
-                                </button>
-                                <button onclick="contactCall2()" class="btn btn-dark flex-fill py-2">
-                                <i class="bi bi-telephone fs-5"></i> Appel-2<br>+1 438-368-1752
-                                </button>
-                            </div>
-
-                            <button onclick="contactSMS()" class="btn btn-primary d-flex align-items-center gap-2 px-4 py-2">
-                                <i class="bi bi-chat-text fs-5"></i> SMS
-                            </button>
-
-                            <button onclick="contactEmail()" class="btn btn-danger d-flex align-items-center gap-2 px-4 py-2">
-                                <i class="bi bi-envelope fs-5"></i> Email
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <div class="contact-buttons">
+                            <button onclick="contactWhatsApp()" class="btn col-4">
+                                <div class="contact-info">
+                                    <div class="contact-icon">
+                                        <i class="bi bi-whatsapp fs-3"></i>
+                                    </div>
+                                    <h5>WhatsApp</h5>
+                                    <p>+237 693 69 45 28</p>
+                                </div>
                             </button>
                             
+                            <button onclick="contactCall()" class="btn col-4">
+                                <div class="contact-info">
+                                    <div class="contact-icon">
+                                        <i class="bi bi-telephone fs-3"></i>
+                                    </div>
+                                    <h5>Téléphone</h5>
+                                    <p> +237 693 69 45 28</p>
+                                </div>
+                            </button>
+                            
+                            <button onclick="contactEmail()" class="btn col-4">
+                                <div class="contact-info">
+                                    <div class="contact-icon">
+                                        <i class="bi bi-envelope fs-3"></i>
+                                    </div>
+                                    <h5>Email</h5>
+                                    <p>contact@wesen.com</p>
+                                </div>
+                            </button>
+                        </div>
                         </div>
                         <div class="d-flex flex-wrap justify-content-center fs-5 gap-4 mt-4">
                         
-                            <a href="https://www.tiktok.com/@blackang05" target="_blank" class="socialm"><i class="fab fa-tiktok"></i> TikTok</a>
-                            <a href="https://www.snapchat.com/add/anny_fobasso"target="_blank" class="socialm"><i class="fab fa-snapchat"></i> Snapchat</a>
-                            <a href="https://www.instagram.com/annyniaemelie" target="_blank" class="socialm"><i class="fab fa-instagram"></i> Instagram</a>
-                            <a href="https://www.facebook.com/emelie.fobasso" target="_blank" class="socialm"><i class="lni lni-facebook-filled"></i>Facebook</a>
+                            <a href="https://www.tiktok.com/@" target="_blank" class="socialm"><i class="fab fa-tiktok"></i> TikTok</a>
+                            <a href="https://www.snapchat.com/add/"target="_blank" class="socialm"><i class="fab fa-snapchat"></i> Snapchat</a>
+                            <a href="https://www.instagram.com/" target="_blank" class="socialm"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="https://www.facebook.com/wesen" target="_blank" class="socialm"><i class="lni lni-facebook-filled"></i>Facebook</a>
                             
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </section>
@@ -457,41 +468,38 @@
     </section>
 
     <!-- Footer -->
-    <footer class="section bg-dark text-white py-2">
+    <footer class="section bg-dark text-white py-2 px-5 footer">
         <div class="container py-3">
             <div class="row g-5 mb-4">
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                     
-                        <a class="navbar-brand" href="index.html">
-                                <img src="assets/logo/logo-wesen.svg" alt="Logo wesen">
+                        <a class="navbar-brand logo-footer" href="index.html">
+                                <img src="assets/logo/logo-wesen.svg" class="logo-color" alt="Logo wesen">
                         </a>
                     
-                    <p class="text-muted">
-                        Des soins capillaires premium pour révéler la beauté naturelle de vos cheveux afro.
+                    <p class="text-white">
+                        Des soins capillaires pour révéler la beauté naturelle de vos cheveux afro.
                     </p>
                 </div>
                 
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                     <h4 class="fs-5 fw-semibold mb-3">Produits</h4>
                     <ul class="list-unstyled text-muted">
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-white">Huiles</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-white">Masques</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-white">Sérums</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted hover-white">Coiffage</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white hover-white">Huiles</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white hover-white">Masques</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white hover-white">Sérums</a></li>
                     </ul>
                 </div>
                 
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                     <h4 class="fs-5 fw-semibold mb-3">Support</h4>
                     <ul class="list-unstyled text-muted">
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-white">Contact</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-white">Livraison</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted hover-white">Retours</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted hover-white">FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white hover-white">Contact</a></li>
+                        <li><a href="#" class="text-decoration-none text-white hover-white">FAQs</a></li>
                     </ul>
                 </div>
                 
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                     <h4 class="fs-5 fw-semibold mb-3">Suivez-nous</h4>
                     <div class="d-flex gap-3 mb-4">
                         <a href="#" class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
@@ -504,7 +512,7 @@
                             <i class="fab fa-pinterest"></i>
                         </a>
                     </div>
-                    <div>
+                    <!-- <div>
                         <p class="text-muted small mb-2">Newsletter</p>
                         <div class="input-group">
                             <input type="email" placeholder="Votre email" class="form-control bg-gray-800 border-secondary text-white">
@@ -512,12 +520,13 @@
                                 <i class="fas fa-paper-plane"></i>
                             </button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             
             <div class="border-top border-secondary pt-4 text-center">
-                <p class="text-muted small">&copy; 2024 wesen. Tous droits réservés. Fait avec ❤️ pour la beauté afro.</p>
+                <p class="text-muted small">&copy; 2025 wesen. Tous droits réservés. Fait par 
+                    <a href="#" class="text-white">Beno mezazem</a>.
             </div>
         </div>
     </footer>
@@ -569,5 +578,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script> 
     <script src="script.js"></script>
+    <!-- script des contacts-->
+    <script>
+        const phoneNumber = "237693694528";
+        const emailAddress = "contact@wesen.com";
+        
+        function contactWhatsApp() {
+            window.open(`https://wa.me/${phoneNumber}`, '_blank');
+        }
+        function contactEmail() {
+            window.location.href = `mailto:${emailAddress}`;
+        }
+        
+        function contactCall() {
+            window.location.href = `tel:${phoneNumber}`;
+        }
+        </script>
 </body>
 </html>

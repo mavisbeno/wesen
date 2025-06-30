@@ -3,7 +3,7 @@ const products = [
     {
         id: 1,
         name: "Huile Nutritive Intense",
-        price: 24.99,
+        price: 1000 ,
         category: "huiles",
         image: "https://images.pexels.com/photos/4408447/pexels-photo-4408447.jpeg",
         description: "Huile riche en vitamines pour nourrir et revitaliser vos cheveux afro"
@@ -11,7 +11,7 @@ const products = [
     {
         id: 2,
         name: "Sérum Réparateur",
-        price: 29.99,
+        price: 1000,
         category: "serums",
         image: "https://images.unsplash.com/photo-1643123158622-cd757dce7cfa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxoYWlyJTIwb2lsc3xlbnwwfHx8fDE3NTA1MjA0NTR8MA&ixlib=rb-4.1.0&q=85",
         description: "Traitement intensif pour réparer les cheveux abîmés et cassants"
@@ -19,7 +19,7 @@ const products = [
     {
         id: 3,
         name: "Masque Hydratant Profond",
-        price: 19.99,
+        price: 1000,
         category: "masques",
         image: "https://images.pexels.com/photos/8467960/pexels-photo-8467960.jpeg",
         description: "Masque ultra-hydratant pour des cheveux doux et brillants"
@@ -27,7 +27,7 @@ const products = [
     {
         id: 4,
         name: "Crème de Coiffage",
-        price: 22.99,
+        price: 1000,
         category: "styling",
         image: "https://images.pexels.com/photos/4408447/pexels-photo-4408447.jpeg",
         description: "Crème définition pour sublimer vos boucles naturelles"
@@ -35,7 +35,7 @@ const products = [
     {
         id: 5,
         name: "Huile de Coco Bio",
-        price: 18.99,
+        price: 1000,
         category: "huiles",
         image: "https://images.unsplash.com/photo-1643123158622-cd757dce7cfa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxoYWlyJTIwb2lsc3xlbnwwfHx8fDE3NTA1MjA0NTR8MA&ixlib=rb-4.1.0&q=85",
         description: "Huile pure de coco pour hydrater et protéger vos cheveux"
@@ -43,7 +43,7 @@ const products = [
     {
         id: 6,
         name: "Masque Réparateur Intense",
-        price: 26.99,
+        price: 1000,
         category: "masques",
         image: "https://images.pexels.com/photos/8467960/pexels-photo-8467960.jpeg",
         description: "Masque professionnel pour cheveux très abîmés"
@@ -127,7 +127,6 @@ function renderProducts() {
 
 function createProductCard(product) {
     const col = document.createElement('div');
-    // col-12 = pleine largeur sur mobile, col-md-6 = 2 cartes par ligne sur tablette/desktop
     col.className = 'col-12 col-md-6';
     
     const card = document.createElement('div');
@@ -140,15 +139,15 @@ function createProductCard(product) {
                 alt="${product.name}"
                 class="img-fluid h-100 w-100 object-fit-cover"
                 loading="lazy"
-                onerror="this.src='https://via.placeholder.com/400x300/f59e0b/ffffff?text=Produit+AnnyHair'"
+                onerror="this.src='https://via.placeholder.com/400x300/f59e0b/ffffff?text=Produit+wesen'"
             />
         </div>
         <div class="card-body">
             <h3 class="card-title fw-bold mb-2">${product.name}</h3>
             <p class="card-text text-muted mb-3">${product.description}</p>
             <div class="d-flex justify-content-between align-items-center">
-                <span class="text-warning fw-bold fs-4">${product.price}€</span>
-                <button 
+                <span class="text-warning fw-bold fs-4">${product.price} fcfa</span>
+                <button id="add-to-cart-btn"
                     class="add-to-cart-btn btn gradient-bg text-white rounded-pill px-4"
                     data-product-id="${product.id}"
                 >
@@ -158,11 +157,23 @@ function createProductCard(product) {
         </div>
     `;
     
-    const addBtn = card.querySelector('.add-to-cart-btn');
-    addBtn.addEventListener('click', () => addToCart(product));
+    const addBtn = card.querySelector('#add-to-cart-btn');
+    addBtn.addEventListener('click', () => {
+        // contacter avec la description du produit
+        contactWhatsAppWithProduct(product);
+    });
     
     col.appendChild(card);
     return col;
+}
+
+function contactWhatsAppWithProduct(product) {
+    const message = `👋 Bonjour, je suis intéressé(e) par ce produit :\n\n` +
+    `🧴 *${product.name}*\n💶 Prix : ${product.price}€\n` +
+    `📄 ${product.description}\n` +
+    `🖼 Voir l'image : ${product.image}`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
 }
 
 function filterProducts(category) {
