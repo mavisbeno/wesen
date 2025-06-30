@@ -83,9 +83,6 @@ function initializeApp() {
 
 // Configuration des événements
 function setupEventListeners() {
-    // Boutons du panier
-    cartOverlay.addEventListener('click', closeCart);
-    closeCartBtn.addEventListener('click', closeCart);
     
     // Filtres de produits
     filterBtns.forEach(btn => {
@@ -102,13 +99,6 @@ function setupEventListeners() {
             behavior: 'smooth' 
         });
     });
-    
-    // Fermeture du panier avec Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !cartSidebar.classList.contains('hidden')) {
-            closeCart();
-        }
-    });
 }
 
 // Gestion des produits
@@ -123,6 +113,14 @@ function renderProducts() {
         const productCard = createProductCard(product);
         productsGrid.appendChild(productCard);
     });
+}
+
+function contactWhatsAppWithProduct(product) {
+    const message = `👋 Salut salut, je suis intéressé(e) par ce produit :\n\n` +
+    `🧴 *${product.name}*\n💶 Prix : ${product.price}€\n` +
+    `📄 ${product.description}\n`
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
 }
 
 function createProductCard(product) {
@@ -147,7 +145,7 @@ function createProductCard(product) {
             <p class="card-text text-muted mb-3">${product.description}</p>
             <div class="d-flex justify-content-between align-items-center">
                 <span class="text-warning fw-bold fs-4">${product.price} fcfa</span>
-                <button id="add-to-cart-btn"
+                <button
                     class="add-to-cart-btn btn gradient-bg text-white rounded-pill px-4"
                     data-product-id="${product.id}"
                 >
@@ -157,7 +155,7 @@ function createProductCard(product) {
         </div>
     `;
     
-    const addBtn = card.querySelector('#add-to-cart-btn');
+    const addBtn = card.querySelector('.add-to-cart-btn');
     addBtn.addEventListener('click', () => {
         // contacter avec la description du produit
         contactWhatsAppWithProduct(product);
@@ -167,14 +165,6 @@ function createProductCard(product) {
     return col;
 }
 
-function contactWhatsAppWithProduct(product) {
-    const message = `👋 Bonjour, je suis intéressé(e) par ce produit :\n\n` +
-    `🧴 *${product.name}*\n💶 Prix : ${product.price}€\n` +
-    `📄 ${product.description}\n` +
-    `🖼 Voir l'image : ${product.image}`;
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
-}
 
 function filterProducts(category) {
     activeCategory = category;
@@ -381,15 +371,6 @@ function formatPrice(price) {
     }).format(price);
 }
 
-// Gestion du responsive
-function handleResize() {
-    // Fermer le panier sur mobile si la fenêtre est redimensionnée
-    if (window.innerWidth > 768 && !cartSidebar.classList.contains('hidden')) {
-        closeCart();
-    }
-}
-
-window.addEventListener('resize', debounce(handleResize, 250));
 
 // Gestion des erreurs globales
 window.addEventListener('error', (e) => {
