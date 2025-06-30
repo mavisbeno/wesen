@@ -116,8 +116,8 @@ function renderProducts() {
 }
 
 function contactWhatsAppWithProduct(product) {
-    const message = `👋 Salut salut, je suis intéressé(e) par ce produit :\n\n` +
-    `🧴 *${product.name}*\n💶 Prix : ${product.price}€\n` +
+    const message = `👋 Salut salut, je suis intéressé(e) par ce produit :\n` +
+    `🧴 *${product.name}*\n` +
     `📄 ${product.description}\n`
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
